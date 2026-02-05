@@ -1,39 +1,45 @@
-/**
- * API Utility
- * 
- * Helper functions untuk fetch data dari backend API
- * Kamu bisa modify atau extend sesuai kebutuhan
- */
+import axios, { AxiosError } from "axios";
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL;
+const BASE_URL = process.env.NEXT_PUBLIC_API_URL!;
 
-/**
- * Generic fetch function dengan error handling
- */
-async function fetchAPI<T>(endpoint: string): Promise<T> {
-  try {
-    const response = await fetch(`${API_BASE_URL}${endpoint}`);
-    
-    if (!response.ok) {
-      throw new Error(`API Error: ${response.status} ${response.statusText}`);
+export const api = axios.create({
+  baseURL: BASE_URL,
+  headers: {
+    "Content-Type": "application/json",
+  },
+});
+
+api.interceptors.request.use(
+  (config) => {
+    if (typeof window !== "undefined") {
+      const token = localStorage.getItem("token");
+      if (token) {
+        config.headers.Authorization = `Bearer ${token}`;
+      }
     }
-    
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    console.error('API Fetch Error:', error);
-    throw error;
-  }
-}
+    return config;
+  },
+  (error) => {
+    return Promise.reject(error);
+  },
+);
 
-// TODO: Implement API functions sesuai dengan endpoint yang tersedia
-// Contoh:
-// export async function getBlogPosts() {
-//   return fetchAPI<BlogPost[]>('/posts');
-// }
-//
-// export async function getBlogPost(id: string) {
-//   return fetchAPI<BlogPost>(`/posts/${id}`);
-// }
+api.interceptors.response.use(
+  (response) => response,
+  (error: AxiosError) => {
+    if (error.response?.status === 401) {
+      if (typeof window !== "undefined") {
+        const isAuthRequest = error.config?.url?.includes("/auth/login");
 
-export { fetchAPI, API_BASE_URL };
+        if (!isAuthRequest) {
+          localStorage.removeItem("token");
+
+          if (!window.location.pathname.startsWith("/login")) {
+            window.location.href = "/login";
+          }
+        }
+      }
+    }
+    return Promise.reject(error);
+  },
+);
