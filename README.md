@@ -1,6 +1,3 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/xzEr7DG_)
-# Blog App Challenge 🚀
-
 Selamat datang di Blog App Challenge! Challenge ini dirancang untuk mengasah kemampuanmu dalam membangun aplikasi web modern menggunakan **Next.js**.
 
 ## 📋 Deskripsi Challenge
@@ -15,9 +12,10 @@ Kamu diminta untuk membuat sebuah **Blog Application** yang lengkap dengan fitur
 ## 🎨 Design Reference
 
 Design Figma yang harus kamu ikuti:
-**https://www.figma.com/design/7Pm8MpV7weRk5VpJ2eRCV1/Blog-Project?node-id=21412-2502&t=arRBFFkF2VndyRLW-1**
+**https://www.figma.com/design/vq53kP5sksYdBUUFkhtWww/Blog-Project--Copy-?node-id=17488-16700&t=4lAqmsaRATcx9J5S-1**
 
 ⚠️ **Penting**: Pastikan design yang kamu buat sesuai dengan design di Figma. Perhatikan:
+
 - Layout dan spacing
 - Typography
 - Colors
@@ -32,6 +30,7 @@ Backend API sudah tersedia di:
 ### Endpoint yang Tersedia
 
 Kamu perlu explore sendiri endpoint-endpoint yang tersedia. Gunakan tools seperti:
+
 - Postman
 - Browser DevTools Network tab
 - curl command
@@ -40,6 +39,7 @@ Kamu perlu explore sendiri endpoint-endpoint yang tersedia. Gunakan tools sepert
 Coba akses base URL untuk melihat dokumentasi atau struktur API yang tersedia.
 
 ### Tips untuk Explore API:
+
 1. Coba akses `https://be-blg-production.up.railway.app/api` di browser
 2. Cek Network tab di browser DevTools saat mengakses
 3. Gunakan Postman untuk test berbagai endpoint
@@ -48,12 +48,14 @@ Coba akses base URL untuk melihat dokumentasi atau struktur API yang tersedia.
 ## 🛠️ Tech Stack
 
 Project ini sudah menggunakan:
+
 - **Next.js 16** (App Router)
 - **React 19**
 - **TypeScript**
 - **Tailwind CSS**
 
 Kamu bebas menambahkan library tambahan jika diperlukan, seperti:
+
 - Axios atau fetch untuk API calls
 - React Query untuk data fetching
 - Form handling libraries
@@ -77,6 +79,7 @@ blog-app-challenge-10/
 ## 🚀 Getting Started
 
 1. **Install dependencies**
+
    ```bash
    npm install
    # atau
@@ -86,6 +89,7 @@ blog-app-challenge-10/
    ```
 
 2. **Jalankan development server**
+
    ```bash
    npm run dev
    # atau
@@ -140,37 +144,36 @@ blog-app-challenge-10/
 
 7. **Responsive Design**: Test di berbagai ukuran screen (mobile, tablet, desktop)
 
-8. **Code Organization**: 
+8. **Code Organization**:
    - Pisahkan components, utils, types, dll ke folder yang sesuai
    - Gunakan naming convention yang konsisten
 
 ## 📚 Resources
 
 ### Next.js Documentation
+
 - [Next.js Docs](https://nextjs.org/docs)
 - [Next.js App Router](https://nextjs.org/docs/app)
 - [Next.js Routing](https://nextjs.org/docs/app/building-your-application/routing)
 
 ### React Documentation
+
 - [React Docs](https://react.dev)
 
 ### Tailwind CSS
+
 - [Tailwind CSS Docs](https://tailwindcss.com/docs)
 
 ### TypeScript
+
 - [TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/intro.html)
 
 ## 🎯 Submission
 
 Setelah selesai, pastikan:
+
 1. Code sudah clean dan well-organized
 2. Semua fitur berfungsi dengan baik
 3. Design sesuai dengan Figma
 4. Responsive di berbagai device
 5. Tidak ada console errors
-
-## ❓ Questions?
-
-Jika ada pertanyaan atau stuck di suatu bagian, jangan ragu untuk bertanya! 
-
-Selamat coding! - Mentor Henry Rivardo
